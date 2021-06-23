@@ -1,0 +1,30 @@
+micronaut:
+  application:
+    name: iuppLearn
+  server:
+    port: 8080
+
+cassandra:
+  default:
+    basic:
+      contact-points:
+        - "127.0.0.1:9042"
+      session-keyspace: mykeyspace
+      load-balancing-policy:
+        local-datacenter: datacenter1
+
+jackson:
+  serialization:
+    writeDatesAsTimestamps: false
+
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+    details-visible: ANONYMOUS
+
+nats:
+  server1:
+    addresses:
+      - "nats://localhost:4222"
+
